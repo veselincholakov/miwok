@@ -2,6 +2,7 @@ package com.example.android.miwok;
 
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,6 +33,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
             LayoutInflater inflater = (LayoutInflater)getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             v = inflater.inflate(R.layout.simple_layout_custom, null);
         }
+
+        v.setBackgroundColor(Color.parseColor("#FD8E09"));
 
         Word currentWord = getItem(position);
 
