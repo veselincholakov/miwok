@@ -3,7 +3,9 @@ package com.example.android.miwok;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +23,8 @@ import java.util.List;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
+    private MediaPlayer mPlayer;
+
     public WordAdapter(Context context, List<Word> objects) {
         super(context, 0, objects);
     }
@@ -36,9 +40,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         v.setBackgroundColor(Color.parseColor("#FD8E09"));
 
-        Word currentWord = getItem(position);
+        final Word currentWord = getItem(position);
 
         if(currentWord != null){
+
+
             TextView textEnglish = (TextView) v.findViewById(R.id.english_meaning);
             TextView textMiwok = (TextView) v.findViewById(R.id.miwok_meaning);
             ImageView imageView = (ImageView) v.findViewById(R.id.image);
